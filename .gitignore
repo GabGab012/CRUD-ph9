@@ -1,5 +1,4 @@
 ﻿bin/
 obj/
-app.db
 *.user
 *.vs
