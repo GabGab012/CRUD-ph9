@@ -2,50 +2,63 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    background: #1a0000; /* dark ember background */
+    color: #fff;
 }
 
 main {
     flex: 1;
 }
 
+/* 🔥 Sidebar */
 .sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-image: linear-gradient(180deg, #330000 0%, #8b0000 40%, #ff4500 100%);
+    color: #ffd9a3;
+    box-shadow: 2px 0 10px rgba(255, 69, 0, 0.6);
 }
 
+/* 🔥 Top row */
 .top-row {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
+    background: linear-gradient(90deg, #8b0000, #ff4500, #ffa500);
+    border-bottom: 1px solid rgba(255, 140, 0, 0.5);
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;
     align-items: center;
+    box-shadow: 0 2px 8px rgba(255, 69, 0, 0.5);
 }
 
     .top-row ::deep a, .top-row ::deep .btn-link {
         white-space: nowrap;
         margin-left: 1.5rem;
         text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        transition: color 0.3s, text-shadow 0.3s;
     }
 
-    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
-        text-decoration: underline;
-    }
+        .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
+            color: #ffd700;
+            text-shadow: 0 0 6px #ff8c00;
+        }
 
-    .top-row ::deep a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+        .top-row ::deep a:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
+/* 📱 Mobile responsiveness */
 @media (max-width: 640.98px) {
     .top-row {
         justify-content: space-between;
     }
 
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        margin-left: 0;
-    }
+        .top-row ::deep a, .top-row ::deep .btn-link {
+            margin-left: 0;
+        }
 }
 
+/* 💻 Desktop layout */
 @media (min-width: 641px) {
     .page {
         flex-direction: row;
@@ -64,11 +77,11 @@ main {
         z-index: 1;
     }
 
-    .top-row.auth ::deep a:first-child {
-        flex: 1;
-        text-align: right;
-        width: 0;
-    }
+        .top-row.auth ::deep a:first-child {
+            flex: 1;
+            text-align: right;
+            width: 0;
+        }
 
     .top-row, article {
         padding-left: 2rem !important;
@@ -76,16 +89,20 @@ main {
     }
 }
 
+/* ⚠️ Blazor error UI */
 #blazor-error-ui {
-    background: lightyellow;
+    background: linear-gradient(90deg, #ff6347, #ff8c00);
+    color: white;
+    font-weight: bold;
     bottom: 0;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -2px 8px rgba(255, 69, 0, 0.7);
     display: none;
     left: 0;
     padding: 0.6rem 1.25rem 0.7rem 1.25rem;
     position: fixed;
     width: 100%;
     z-index: 1000;
+    border-top: 2px solid #ffd700;
 }
 
     #blazor-error-ui .dismiss {
@@ -93,4 +110,6 @@ main {
         position: absolute;
         right: 0.75rem;
         top: 0.5rem;
+        color: #fff;
+        text-shadow: 0 0 4px #000;
     }

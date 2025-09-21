@@ -14,11 +14,11 @@
     <a href="studentcs/create">Create New</a>
 </p>
 
-<QuickGrid Class="table" Items="context.Studentcs">
+<QuickGrid Class="table" Items="context.Studentcs" style="color:white;">
     <PropertyColumn Property="studentcs => studentcs.Name" />
     <PropertyColumn Property="studentcs => studentcs.Age" />
     <PropertyColumn Property="studentcs => studentcs.Birthday" Title="Date of Birth" Format="MM/dd/yyyy"/>
-
+    
     <TemplateColumn Context="studentcs">
         <a href="@($"studentcs/edit?id={studentcs.Id}")">Edit</a> |
         <a href="@($"studentcs/details?id={studentcs.Id}")">Details</a> |
